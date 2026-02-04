@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $username;
             $_SESSION['firstname'] = $row['firstname']; // Use $row['firstname']
             $_SESSION['role'] = $row['role']; // Store the user's role
+            $_SESSION['last_activity'] = time(); // ito yung sa session timeout ng mga users
 
             // Redirect to dashboard based on role
             if ($_SESSION['role'] == 'admin') {
