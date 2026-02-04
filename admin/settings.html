@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | ICCT Admin</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../global-design/settings.css">
+</head>
+<body>
+
+    <div class="admin-wrapper">
+        <aside class="sidebar d-none d-lg-flex">
+            <div class="sidebar-logo">
+                <img src="../img/icct.png" alt="Logo" class="logo-img">
+                <span>ADMIN</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../admin/admin.html"><i class="bi bi-megaphone"></i> Announcement</a>
+                <a href="../admin/contact.html"><i class="bi bi-person-lines-fill"></i> Contacts</a>
+                <a href="../admin/activitylog.html"><i class="bi bi-journal-text"></i> Activity Log</a>
+                <a href="../admin/settings.html" class="active"><i class="bi bi-gear"></i> Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="logout-btn">
+                    <a href="../index.html"> <i class="bi bi-box-arrow-right"></i> Logout</a>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content container-fluid">
+            <header class="admin-header row align-items-center py-4">
+                <div class="col-md-6">
+                    <h1 class="m-0 text-uppercase fw-bold ls-2">Settings</h1>
+                </div>
+                <div class="col-md-6 d-flex justify-content-md-end align-items-center gap-3">
+                    <span class="text-secondary">Welcome, Admin</span>
+                    <img src="../img/profile.png" alt="Admin" class="profile-circle">
+                </div>
+            </header>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="settings-card shadow-lg">
+                        <div class="row g-5">
+                            <div class="col-md-4 section-divider">
+                                <div class="setting-group">
+                                    <span class="pill-label">Dark Mode</span>
+                                    <div class="form-check form-switch mt-4 d-flex align-items-center gap-3">
+                                        <input class="form-check-input" type="checkbox" id="darkSwitch" checked>
+                                        <label class="form-check-label small" for="darkSwitch">ON</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 section-divider">
+                                <div class="setting-group">
+                                    <span class="pill-label">Time Settings</span>
+                                    <div class="form-check form-switch mt-4 d-flex align-items-center gap-3">
+                                        <input class="form-check-input" type="checkbox" id="localeSwitch" checked>
+                                        <label class="form-check-label small" for="localeSwitch">Use Locale Default</label>
+                                    </div>
+                                    <div class="form-check form-switch mt-3 d-flex align-items-center gap-3">
+                                        <input class="form-check-input" type="checkbox" id="hourSwitch">
+                                        <label class="form-check-label small" for="hourSwitch">Use 24-Hour Format</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="setting-group">
+                                    <span class="pill-label">Notifications</span>
+                                    <div class="form-check form-switch mt-4 d-flex align-items-center gap-3">
+                                        <input class="form-check-input" type="checkbox" id="emailSwitch" checked>
+                                        <label class="form-check-label small" for="emailSwitch">Send Notifications via email</label>
+                                    </div>
+                                    <div class="form-check form-switch mt-3 d-flex align-items-center gap-3">
+                                        <input class="form-check-input" type="checkbox" id="contentSwitch" checked>
+                                        <label class="form-check-label small" for="contentSwitch">New Content Added</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-footer d-flex justify-content-between align-items-end mt-5 pt-4">
+                            <div class="footer-links">
+                                <a href="#" class="d-block mb-1">Terms And Conditions</a>
+                                <a href="#" class="d-block">About Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+    const darkSwitch = document.getElementById('darkSwitch');
+    const mainContent = document.querySelector('.main-content');
+    const label = document.querySelector('label[for="darkSwitch"]');
+
+    // Function para i-apply ang theme
+    function setTheme(isDark) {
+        if (isDark) {
+            mainContent.classList.remove('light-background');
+            darkSwitch.checked = true;
+            label.textContent = 'ON';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            mainContent.classList.add('light-background');
+            darkSwitch.checked = false;
+            label.textContent = 'OFF';
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    // Check kung may naka-save na preference sa browser
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        setTheme(false);
+    }
+
+    // Event listener para sa pag-switch
+    darkSwitch.addEventListener('change', function() {
+        setTheme(this.checked);
+    });
+</script>
+
+</body>
+</html>

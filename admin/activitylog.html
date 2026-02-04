@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Log | ICCT Admin</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../global-design/activitylog.css">
+</head>
+<body>
+
+    <div class="admin-wrapper">
+        <aside class="sidebar d-none d-lg-flex">
+            <div class="sidebar-logo">
+                <img src="../img/icct.png" alt="Logo" class="logo-img">
+                <span>ADMIN</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../admin/admin.html"><i class="bi bi-megaphone"></i> Announcement</a>
+                <a href="../admin/contact.html"><i class="bi bi-person-lines-fill"></i> Contacts</a>
+                <a href="../admin/activitylog.html" class="active"><i class="bi bi-journal-text"></i> Activity Log</a>
+                <a href="../admin/settings.html"><i class="bi bi-gear"></i> Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="logout-btn">
+                    <a href="../index.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content container-fluid">
+            <header class="admin-header row align-items-center py-4">
+                <div class="col-md-6">
+                    <h1 class="m-0 text-uppercase fw-bold ls-2">ACTIVITY LOG</h1>
+                </div>
+                <div class="col-md-6 d-flex justify-content-md-end align-items-center gap-3 mt-3 mt-md-0">
+                    <span class="text-secondary">Welcome, Admin</span>
+                    <img src="../img/profile.png" alt="Admin" class="profile-circle">
+                </div>
+            </header>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="data-section shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="date-badge">
+                                <span class="label">DATE</span>
+                                <span class="value text-dark">1/20/2026</span>
+                            </div>
+                            <button class="btn btn-outline-light btn-sm px-4">Export CSV</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover align-middle custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>USER</th>
+                                        <th>DESIGNATION</th>
+                                        <th>ACTION</th>
+                                        <th>TIME IN</th>
+                                        <th>TIME OUT</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Daniel Valdivia</td>
+                                        <td>Professor</td>
+                                        <td>Logged In</td>
+                                        <td>08:00 AM</td>
+                                        <td>--:--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sarah Jenkins</td>
+                                        <td>Admin</td>
+                                        <td>Updated Records</td>
+                                        <td>09:15 AM</td>
+                                        <td>10:30 AM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+    const darkSwitch = document.getElementById('darkSwitch');
+    const mainContent = document.querySelector('.main-content');
+    const label = document.querySelector('label[for="darkSwitch"]');
+
+    // Function para i-apply ang theme
+    function setTheme(isDark) {
+        if (isDark) {
+            mainContent.classList.remove('light-background');
+            darkSwitch.checked = true;
+            label.textContent = 'ON';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            mainContent.classList.add('light-background');
+            darkSwitch.checked = false;
+            label.textContent = 'OFF';
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    // Check kung may naka-save na preference sa browser
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        setTheme(false);
+    }
+
+    // Event listener para sa pag-switch
+    darkSwitch.addEventListener('change', function() {
+        setTheme(this.checked);
+    });
+</script>
+
+</body>
+</html>

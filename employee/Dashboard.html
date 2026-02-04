@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Employee Portal</title>
+    <link rel="stylesheet" href="../global-design/dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <header class="top-nav">
+    <div class="container header-flex">
+        <div class="logo-area">
+            <img src="../img/icct.png" alt="ICCT Logo" class="logo-image">
+        </div>
+
+        <nav class="nav-menu">
+            <a href="../employee/dashboard.html" class="nav-item active">
+                <i class="bi bi-grid-fill"></i> Dashboard
+            </a>
+            <a href="../employee/Timeline.html" class="nav-item">
+                <i class="bi bi-clock-history"></i> Timeline
+            </a>
+            <a href="../employee/MyAccount.html" class="nav-item">
+                <i class="bi bi-pencil-square"></i> My Account
+            </a>
+        </nav>
+
+        <div class="profile-area">
+    <div class="profile-dropdown">
+        <img id="profile-picture" src="default_profile_picture.jpg" alt="Profile" class="profile-placeholder">
+        <div class="dropdown-content">
+            <div class="dropdown-header">
+                <img id="profile-picture" src="default_profile_picture.jpg" alt="Profile" class="dropdown-img">
+                <p class="greeting">Hi <span id="name"></span></p>
+            </div>
+            <hr class="dropdown-divider">
+            <a href="../index.html" class="sign-out-btn">
+                <i class="bi bi-box-arrow-right"></i> Sign Out
+            </a>
+        </div>
+    </div>
+</div>
+</header>
+
+        <div class="content-wrapper">
+            <section class="text-section">
+                <h1 class="page-title">WELCOME <p><span id="name"></span></p></h1>
+                <p class="subtitle"></p>
+            </section>
+
+            <section class="profile-card-section">
+                <div class="profile-container-custom">
+                    <div class="profile-header-flex">
+                        <img id="profile-picture" src="default_profile_picture.jpg" alt="Profile Picture" class="large-profile-img">
+                        <div class="profile-text">
+                            <h2><span id="name"></span></h2>
+                            <p><strong>Email: </strong><span id="email"></span></p>
+                            <p><strong>Contact: </strong><span id="contact"></span></p>
+                            <div class="action-buttons">
+                                <a href="MyAccount.html" class="edit-link"><i class="bi bi-pencil-square"></i> Edit Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="divider">
+
+                    <div class="profile-bio">
+                        <p><span id="bio"></span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="profile-card-section" style="margin-top: 2rem;">
+                <div class="profile-container-custom">
+                    <div class="basic-info-content">
+                        <h3 class="section-headline">Basic Information:</h3>
+                        
+                        <div class="info-grid">
+                            <div class="info-group">
+                                <p><strong>Age: </strong><span id="age"></span></p>
+                                <p><strong>Date Of Birth: </strong><span id="date_of_birth"></span></p>
+                                <p><strong>Gender Field: </strong><span id="gender"></span></p>
+                                <p><strong>Marital Status: </strong><span id="marital_status"></span></p>
+                            </div>
+                            <div class="info-group">
+                                <p><strong>Address: </strong> <span id="address"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="../script/dashboard.js"></script>
+</body>
+</html>

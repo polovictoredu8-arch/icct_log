@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+    --bg-deep: #001c3d;
+    --bg-card: #03254c;
+    --accent: #ffffff;
+}
+
+h1 {
+    font-size: 2.2rem !important; /* Laki ng "ADMIN DASHBOARD" */
+    font-weight: 700 !important;
+    letter-spacing: 2px;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: white;
+}
+
+.admin-wrapper { display: flex; min-height: 100vh; }
+
+.main-content { 
+    flex-grow: 1; 
+    padding: 10px 40px 40px 40px; 
+}
+
+.admin-header { margin-bottom: 0.5rem; }
+
+/* SIDEBAR */
+.sidebar {
+    width: 280px;
+    background-color: var(--bg-card);
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar-logo {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+}
+
+.sidebar-nav a {
+    padding: 1rem 2rem;
+    color: #bdc3c7;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.2s;
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-left: 4px solid white;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+    margin: 1.5rem;
+    width: calc(100% - 3rem);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.6rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.logout-btn a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* CARDS */
+.contact-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
+}
+
+/* INPUTS */
+.custom-input {
+    background-color: #001229 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border-radius: 8px;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.send-btn {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: white;
+    color: var(--bg-deep);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* IMAGES & ICONS */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.logo-img {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.profile-circle { 
+    width: 40px !important; 
+    height: 40px !important; 
+    border-radius: 50%; 
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    object-fit: cover;
+}
+
+h2, .h5, .pill-label {
+    font-size: 1.5rem !important; /* Kapantay ng card titles sa dashboard */
+    font-weight: 600 !important;
+}
+
+.form-label {
+    font-size: 0.9rem !important;
+    font-weight: 700 !important; /* Bold labels gaya ng dashboard */
+    text-transform: uppercase;
+}
+
+.main-content {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Kapag aktibo ang light-background class */
+.light-background {
+    background-color: #f0f2f5 !important; /* Bahagyang grayish white para hindi masakit sa mata */
+}
+
+/* Titulo at Text sa Header: Gawing Dark Blue/Black */
+.light-background .admin-header h1 {
+    color: #001c3d !important;
+    text-shadow: none;
+}
+
+.light-background .text-secondary {
+    color: #555 !important; /* Mas madilim na gray para sa "Welcome, Admin" */
+}
+
+/* Settings Card: Lalagyan ng Shadow para lumutang */
+.light-background .settings-card {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important; /* Soft dark shadow */
+    background: var(--bg-card); /* Mananatiling dark blue ang box */
+}
+
+/* Divider: Gawing mas visible ang guhit sa loob ng card */
+.light-background .section-divider {
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Switches: Siguraduhing malinis ang border ng switch sa light mode */
+.light-background .form-check-input {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}

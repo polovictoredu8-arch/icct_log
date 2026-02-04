@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-deep: #001c3d;
+    --bg-card: #03254c;
+    --accent-blue: #3498db;
+    --accent-white: #ffffff;
+}
+
+/* DASHBOARD FONT MATCHING */
+h1 {
+    font-size: 2.2rem !important; /* Laki ng "ADMIN DASHBOARD" */
+    font-weight: 700 !important;
+    letter-spacing: 2px;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: white;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.admin-wrapper { 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 280px;
+    background-color: var(--bg-card);
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar-logo { 
+    padding: 2rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    font-weight: bold; 
+}
+
+.logo-img { 
+    width: 45px !important; 
+    height: 45px !important; 
+    border-radius: 50%; 
+    border: 2px solid white; 
+    object-fit: cover; 
+}
+
+.sidebar-nav a {
+    padding: 1rem 2rem;
+    color: #bdc3c7;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.2s;
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-left: 4px solid white;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+    margin: 1.5rem;
+    width: calc(100% - 3rem);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.6rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.logout-btn a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-white);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* MAIN CONTENT */
+.main-content { 
+    flex-grow: 1; 
+    padding: 0 40px 40px 40px; 
+}
+
+.profile-circle { 
+    width: 40px !important; 
+    height: 40px !important; 
+    border-radius: 50%; 
+    border: 2px solid rgba(255,255,255,0.5); 
+    object-fit: cover; 
+}
+
+/* SETTINGS CARD - Ibinalik ang dating hitsura */
+.settings-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-divider { 
+    border-right: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.pill-label {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 8px 24px;
+    border-radius: 12px;
+}
+
+/* CUSTOM SWITCHES */
+.form-check-input {
+    width: 3.2em !important;
+    height: 1.6em !important;
+    background-color: #001c3d !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.form-check-input:checked { 
+    background-color: var(--accent-blue) !important; 
+}
+
+.footer-links a { 
+    color: var(--accent-blue); 
+    text-decoration: none; 
+    font-size: 0.85rem; 
+}
+
+/* Transition para hindi bigla ang pagputi ng background */
+.main-content {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Kapag aktibo ang light-background class */
+.light-background {
+    background-color: #f0f2f5 !important; /* Bahagyang grayish white para hindi masakit sa mata */
+}
+
+/* Titulo at Text sa Header: Gawing Dark Blue/Black */
+.light-background .admin-header h1 {
+    color: #001c3d !important;
+    text-shadow: none;
+}
+
+.light-background .text-secondary {
+    color: #555 !important; /* Mas madilim na gray para sa "Welcome, Admin" */
+}
+
+/* Settings Card: Lalagyan ng Shadow para lumutang */
+.light-background .settings-card {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important; /* Soft dark shadow */
+    background: var(--bg-card); /* Mananatiling dark blue ang box */
+}
+
+/* Divider: Gawing mas visible ang guhit sa loob ng card */
+.light-background .section-divider {
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Switches: Siguraduhing malinis ang border ng switch sa light mode */
+.light-background .form-check-input {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}

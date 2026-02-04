@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    /* Color Palette */
+    --bg-dark-blue: #000033; 
+    --nav-button-bg: #1e1e4f; 
+    --indicator-line: #FFFFFF;
+    --main-bg: #002B5B;
+    --card-bg: #00254D;
+    --text-color: #FFFFFF;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Layout Containers */
+.container, .content-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation Section Fixes */
+.top-nav {
+    background-color: var(--bg-dark-blue);
+    padding: 0.5rem 0;
+    height: 80px;      /* Consistent fixed height */
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: sticky;  /* Keeps nav at the top */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Logo Sizing */
+.logo-area .logo-image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Nav Menu & Items */
+.nav-menu {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--nav-button-bg);
+    padding: 8px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent; 
+    height: 45px; /* Aligns with profile icon height */
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 3px solid var(--indicator-line);
+}
+
+/* Header Profile Icon */
+.profile-area .profile-placeholder {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+    object-fit: cover;
+    display: block;
+}
+
+/* Content Area */
+.content-wrapper {
+    padding: 2rem 0;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Card Styling */
+.profile-card-section {
+    margin-bottom: 2rem;
+}
+
+.profile-container-custom {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.profile-header-flex {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.large-profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.edit-link {
+    background-color: #2222b3; 
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.edit-link:hover {
+    background-color: #000000;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 1.5rem 0;
+}
+
+/* Basic Information Grid (Consistently Sized) */
+.section-headline {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Address gets more horizontal space */
+    gap: 30px;
+}
+
+.info-group p {
+    font-size: 1rem; /* Uniform size for all text */
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+
+/* --- Profile Dropdown Styling --- */
+.profile-area {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-dropdown {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: block; /* Palitan ang 'none' ng 'block' para gumana ang transition */
+    position: absolute;
+    right: 0;
+    top: 60px; 
+    background-color: #0c1427; 
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+    border-radius: 12px;
+    padding: 20px;
+    z-index: 1100;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    /* Transitions and Visibility */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); /* Magsisimula ng bahagyang mas mataas */
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    transition-delay: 0.1s; /* Kaunting delay bago lumitaw */
+}
+
+/* Show dropdown on hover */
+.profile-area:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Bababa sa tamang pwesto */
+    transition-delay: 0s; /* Lalabas agad pag-hover, pero mawawala nang may delay */
+}
+
+.profile-area .dropdown-content {
+    transition-delay: 0.3s; /* Mananatili ng 0.3s bago mag-fade out */
+}
+
+.dropdown-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+.greeting {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.dropdown-divider {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 15px 0;
+}
+
+/* Sign Out Button Style */
+.sign-out-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.sign-out-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .top-nav {
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .header-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .profile-header-flex, .info-grid {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .large-profile-img {
+        margin: 0 auto;
+    }
+}

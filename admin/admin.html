@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ICCT Admin</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../global-design/admin.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <aside class="sidebar d-none d-lg-flex">
+            <div class="sidebar-logo">
+                <img src="../img/icct.png" alt="Logo" class="logo-img">
+                <span>ADMIN</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../admin/admin.html" class="active"><i class="bi bi-megaphone"></i> Announcements</a>
+                <a href="../admin/contact.html"><i class="bi bi-person-lines-fill"></i> Contacts</a>
+                <a href="../admin/activitylog.html"><i class="bi bi-journal-text"></i> Activity Log</a>
+                <a href="../admin/settings.html"><i class="bi bi-gear"></i> Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+    <button class="logout-btn">
+        <a href="../index.html">
+            <i class="bi bi-box-arrow-right"></i> Logout
+        </a>
+    </button>
+</div>
+        </aside>
+
+        <main class="main-content container-fluid">
+            <header class="admin-header row align-items-center py-3">
+    <div class="col-md-6">
+        <h1 class="m-0 text-uppercase fw-bold ls-2">ADMIN DASHBOARD</h1>
+    </div>
+    <div class="col-md-6 d-flex justify-content-md-end align-items-center gap-3 mt-3 mt-md-0">
+        <span class="text-secondary">Welcome, Admin</span>
+        <img src="../img/profile.png" alt="Admin" class="profile-circle">
+    </div>
+</header>
+
+            <div class="row mb-3">
+                <div class="col-12 col-sm-auto">
+                    <div class="stat-card compact-card shadow-sm">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-person-badge-fill text-info fs-2"></i>
+                            <div class="stat-info">
+                                <h3 class="m-0 fw-bold">24</h3>
+                                <p class="m-0 text-secondary small text-uppercase">Faculty Members</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="data-section shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="h5 m-0"><i class="bi bi-megaphone-fill me-2"></i>Announcements</h2>
+                            <button class="btn btn-primary btn-sm px-4">+ Create Post</button>
+                        </div>
+                        
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <div class="announcement-card">
+                                    <div class="card-header-post">
+                                        <span class="badge bg-info">Event</span>
+                                        <small class="text-secondary">Feb 2, 2026</small>
+                                    </div>
+                                    <div class="card-body-post mt-3">
+                                        <h5 class="fw-bold">Foundation Day Celebration</h5>
+                                        <p class="text-secondary small">Handa na ba ang lahat para sa ating darating na Foundation Day?</p>
+                                    </div>
+                                    <div class="card-footer-post d-flex justify-content-between align-items-center mt-3">
+                                        <button class="btn btn-sm btn-outline-light">Read More</button>
+                                        <div class="actions">
+                                            <i class="bi bi-pencil-square me-2 cursor-pointer"></i>
+                                            <i class="bi bi-trash text-danger cursor-pointer"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <div class="announcement-card">
+                                    <div class="card-header-post">
+                                        <span class="badge bg-warning text-dark">Urgent</span>
+                                        <small class="text-secondary">Jan 30, 2026</small>
+                                    </div>
+                                    <div class="card-body-post mt-3">
+                                        <h5 class="fw-bold">System Maintenance</h5>
+                                        <p class="text-secondary small">Magkakaroon ng maintenance ang ating student portal mamayang gabi.</p>
+                                    </div>
+                                    <div class="card-footer-post d-flex justify-content-between align-items-center mt-3">
+                                        <button class="btn btn-sm btn-outline-light">Read More</button>
+                                        <div class="actions">
+                                            <i class="bi bi-pencil-square me-2 cursor-pointer"></i>
+                                            <i class="bi bi-trash text-danger cursor-pointer"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <div class="announcement-card">
+                                    <div class="card-header-post">
+                                        <span class="badge bg-success">Update</span>
+                                        <small class="text-secondary">Jan 28, 2026</small>
+                                    </div>
+                                    <div class="card-body-post mt-3">
+                                        <h5 class="fw-bold">New Faculty Members</h5>
+                                        <p class="text-secondary small">Malugod nating tinatanggap ang mga bagong guro sa IT Department.</p>
+                                    </div>
+                                    <div class="card-footer-post d-flex justify-content-between align-items-center mt-3">
+                                        <button class="btn btn-sm btn-outline-light">Read More</button>
+                                        <div class="actions">
+                                            <i class="bi bi-pencil-square me-2 cursor-pointer"></i>
+                                            <i class="bi bi-trash text-danger cursor-pointer"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<script>
+    const darkSwitch = document.getElementById('darkSwitch');
+    const mainContent = document.querySelector('.main-content');
+    const label = document.querySelector('label[for="darkSwitch"]');
+
+    // Function para i-apply ang theme
+    function setTheme(isDark) {
+        if (isDark) {
+            mainContent.classList.remove('light-background');
+            darkSwitch.checked = true;
+            label.textContent = 'ON';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            mainContent.classList.add('light-background');
+            darkSwitch.checked = false;
+            label.textContent = 'OFF';
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    // Check kung may naka-save na preference sa browser
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        setTheme(false);
+    }
+
+    // Event listener para sa pag-switch
+    darkSwitch.addEventListener('change', function() {
+        setTheme(this.checked);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+/* admin-style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+    --bg-deep: #001c3d;
+    --bg-card: #03254c;
+    --accent: #ffffff;
+}
+
+/* --- DASHBOARD FONT MATCHING --- */
+h1 {
+    font-size: 2.2rem !important; /* Laki ng "ADMIN DASHBOARD" */
+    font-weight: 700 !important;
+    letter-spacing: 2px;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: white;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px;
+    background-color: var(--bg-card);
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    background: white;
+}
+
+.sidebar-logo {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+}
+
+.sidebar-nav a {
+    padding: 1rem 2rem;
+    color: #bdc3c7;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.2s;
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-left: 4px solid white;
+}
+
+/* Profile Circle */
+.profile-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 10px 40px 40px 40px; 
+}
+
+.admin-header h1 {
+    line-height: 1.2;
+    letter-spacing: 2px; /* Ito yung ls-2 mo */
+}
+
+.admin-header {
+    margin-bottom: 0.5rem;
+}
+
+.data-section {
+    background: var(--bg-card);
+    padding: 1.5rem; 
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 0; 
+}
+
+.announcement-card {
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.2rem; /* Binawasan ng konti ang padding sa loob */
+    height: 100%;
+    transition: all 0.3s ease;
+}
+/* Card Styling */
+.stat-card {
+    background: #03254c; /* Matches your sidebar/card theme */
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block; /* Prevents it from stretching to full width */
+    min-width: 220px;
+    transition: transform 0.2s ease;
+}
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.stat-info p {
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* Table Section Styling */
+
+
+.custom-table {
+    --bs-table-bg: transparent;
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.03);
+    color: white;
+}
+
+.logout-btn {
+    margin: 1.5rem;
+    width: calc(100% - 3rem);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.6rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.logout-btn a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-white);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.announcement-card {
+    background: rgba(255, 255, 255, 0.05); /* Bahagyang transparent */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.announcement-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.card-header-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-pointer:hover {
+    opacity: 0.8;
+}
+
+/* Custom scrollbar para sa main content kung sakaling marami ang posts */
+main::-webkit-scrollbar {
+    width: 6px;
+}
+main::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.main-content {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Kapag aktibo ang light-background class */
+.light-background {
+    background-color: #f0f2f5 !important; /* Bahagyang grayish white para hindi masakit sa mata */
+}
+
+/* Titulo at Text sa Header: Gawing Dark Blue/Black */
+.light-background .admin-header h1 {
+    color: #001c3d !important;
+    text-shadow: none;
+}
+
+.light-background .text-secondary {
+    color: #555 !important; /* Mas madilim na gray para sa "Welcome, Admin" */
+}
+
+/* Settings Card: Lalagyan ng Shadow para lumutang */
+.light-background .settings-card {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important; /* Soft dark shadow */
+    background: var(--bg-card); /* Mananatiling dark blue ang box */
+}
+
+/* Divider: Gawing mas visible ang guhit sa loob ng card */
+.light-background .section-divider {
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Switches: Siguraduhing malinis ang border ng switch sa light mode */
+.light-background .form-check-input {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}

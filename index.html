@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICCT Colleges - Secure Login System</title>
+    <link rel="stylesheet" href="global-design/login.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="bg-pattern"></div>
+    <div class="login-box">
+        <div class="left-panel">
+            <div class="logo-placeholder">
+                <img src="img/icct.png" alt="ICCT Colleges Logo" class="icct-logo">
+            </div>
+            <h1>ICCT<br>COLLEGES</h1>
+            <p>Secure Log in System</p>
+        </div>
+        <div class="right-panel">
+            <h2>Sign in</h2>
+            <p class="subtext">Please Sign in to Continue</p>
+            <form action="config/login_register.php" id="login-form" class="login-form" method="post">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Username" required name="username">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password" required name="password">
+                </div>
+                <button type="submit" class="login-btn">Sign in</button>
+                <div class="footer-links-container">
+                    <div class="left-links">
+                        <a href="signup.html" class="footer-link">Create new account</a>
+                        <span class="separator">|</span>
+                    </div>
+                    <div class="right-links">
+                        <a href="#" class="footer-link">Need help?</a>
+                        <span class="separator">|</span>
+                        <a href="forgotpass.html" class="footer-link">Forgot Password?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

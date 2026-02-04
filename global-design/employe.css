@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #00204a; /* Matches reference dark blue background */
+    color: #fff;
+}
+
+/* Header with Logo & Navigation */
+.main-header {
+    display: flex;
+    align-items: center; /* Vertically aligns logo and nav with same height */
+    justify-content: flex-end; /* Pushes nav to right, keeps logo left */
+    padding: 0.8rem 1.5rem;
+    background-color: #00204a;
+    border-bottom: 2px solid #00a8e8; /* Accent blue line */
+}
+
+.logo-container {
+    margin-right: auto; /* Forces logo to stay left, nav to right */
+    flex-shrink: 0;
+}
+
+.icct-logo {
+    /* Size matches font scale (1rem = 16px; logo ~2x font size for balance) */
+    width: 2.2rem; 
+    height: 2.2rem; /* Square for perfect circle */
+    display: block;
+    border-radius: 50%;
+    object-fit: cover; /* Prevents distortion */
+    border: 2px solid #fff; /* Thinner border to match smaller size */
+}
+
+.header-nav {
+    display: flex;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+    /* No top margin needed - aligned with logo height */
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #00a8e8;
+    border-bottom: 2px solid #00a8e8;
+}
+
+/* Main Content */
+.main-container {
+    padding: 1.5rem 2rem;
+}
+
+.content-section {
+    display: none;
+    background-color: #003468; /* Slightly lighter blue for content */
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Table Styles (Matches Reference) */
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.employees-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.employees-table th, .employees-table td {
+    border: 1px solid #00a8e8; /* Light blue grid lines */
+    padding: 0.8rem 1rem;
+    text-align: left;
+}
+
+.employees-table th {
+    background-color: #002a5a;
+    font-weight: 600;
+}
+
+.employees-table tr {
+    background-color: #003468;
+}
+
+.employees-table tr:hover {
+    background-color: #004080;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+    .main-header {
+        flex-wrap: wrap;
+        justify-content: center; /* Centers nav when wrapped */
+        padding: 1rem 1.5rem;
+    }
+
+    .logo-container {
+        margin-right: 0;
+        margin-bottom: 0.8rem; /* Spacing between logo and nav */
+    }
+
+    .icct-logo {
+        width: 2rem; /* Slightly smaller for medium screens */
+        height: 2rem;
+    }
+
+    .header-nav {
+        gap: 1.5rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .icct-logo {
+        width: 1.8rem; /* Smaller for mobile */
+        height: 1.8rem;
+    }
+
+    .header-nav {
+        gap: 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .employees-table th, .employees-table td {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .main-container {
+        padding: 1rem;
+    }
+}
