@@ -2,10 +2,11 @@
 session_start();
 header('Content-Type: application/json');
 
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "icct_emp";
+$host = "sql202.infinityfree.com";
+$username = "if0_41088255";
+$password = "adminicct10";
+$database = "if0_41088255_icct_emp";
+";
 
 $conn = new mysqli($host, $username, $password, $database);
 
