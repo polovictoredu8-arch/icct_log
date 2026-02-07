@@ -1,7 +1,8 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-$conn = new mysqli("localhost", "root", "", "icct_emp");
+$conn = new mysqli("sql202.infinityfree.com", "if0_41088255", "adminicct10", "if0_41088255_icct_emp";
+");
 $user_id = $_SESSION['id'];
 
 $sql = "SELECT date, day_of_week, time_in, time_out, status, late_minutes FROM attendance_tb WHERE user_id = ? ORDER BY date DESC";
